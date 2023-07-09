@@ -4,9 +4,8 @@ const getUniqueProductsName = (array) => {
   let stockProductsName = [];
 
   for (let index = 0; index < array.length; index += 1) {
-    stockProductsName.push(array[index]);
+    stockProductsName.push(array[index].productName);
   }
-  console.log(stockProductsName);
   return stockProductsName;
 };
 console.log(getUniqueProductsName(stockProducts));
