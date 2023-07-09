@@ -1,14 +1,14 @@
 const stockProducts = require('./data.json');
 
-const getOutOfStockProducts = (array) => {
+const getOutOfStockProducts = () => {
   let nameOutProduct = [];
-  for (let index = 0; index < array.length; index += 1) {
-    if (array[index].quantityInStock === 0) {
-      nameOutProduct.push(array[index].productName);
+  for (let index = 0; index < stockProducts.length; index += 1) {
+    if (stockProducts[index].quantityInStock === 0) {
+      nameOutProduct.push(stockProducts[index].productName);
     }
   }
   return nameOutProduct;
 };
-console.log(getOutOfStockProducts(stockProducts));
+console.log(getOutOfStockProducts());
 
 module.exports = { getOutOfStockProducts };
