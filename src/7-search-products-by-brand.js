@@ -7,16 +7,16 @@ const searchProductsByBrand = (nameBrand) => {
     if (nameBrand === stockProducts[index].brand) {
       let searchBrand = {
         description: stockProducts[index].description,
-        formattedPrice: `R$${stockProducts[index].price}`
-      }
+        formattedPrice: `R$ ${stockProducts[index].price}`,
+      };
       searchBrands.push(searchBrand);
       foundBrand = true;
     }
   }
   if (!foundBrand) {
-    searchBrands = null;
+    searchBrands = [];
   }
   return searchBrands;
 };
-console.log(searchProductsByBrand('Hortifruti'));
+console.log(searchProductsByBrand());
 module.exports = { searchProductsByBrand };

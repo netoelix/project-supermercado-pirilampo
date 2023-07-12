@@ -6,7 +6,7 @@ const searchProductByName = (nameProduct) => {
   for (let index = 0; index < stockProducts.length; index += 1) {
     if (nameProduct === stockProducts[index].productName) {
       searchProduct.description = stockProducts[index].description;
-      searchProduct.formattedPrice = `R$${stockProducts[index].price}`;
+      searchProduct.formattedPrice = `R$ ${stockProducts[index].price}`;
       foundProduct = true;
       break;
     }
