@@ -1,9 +1,9 @@
 const stockProducts = require('./data.json');
 
-const getProductsWithAllergyOrIntoleranceInfo = (nameProduct) => {
+const getProductsWithAllergyOrIntoleranceInfo = () => {
   let searchProduct = [];
   for (let index = 0; index < stockProducts.length; index += 1) {
-    if (nameProduct === stockProducts[index].productName) {
+    if (stockProducts[index].allergyOrIntolerance) {
       let productsAllergyOrIntolerance = {
         description: stockProducts[index].description,
         formattedPrice: `R$ ${stockProducts[index].price}`,
@@ -14,4 +14,5 @@ const getProductsWithAllergyOrIntoleranceInfo = (nameProduct) => {
   }
   return searchProduct;
 };
+console.log(getProductsWithAllergyOrIntoleranceInfo());
 module.exports = { getProductsWithAllergyOrIntoleranceInfo };
