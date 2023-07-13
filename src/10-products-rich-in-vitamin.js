@@ -6,8 +6,7 @@ const getProductsRichInVitamin = () => {
   for (let index = 0; index < stockProducts.length; index += 1) {
     if (stockProducts[index].nutritionalInfo.vitamins) {
       let vitaminsDisponible = [];
-      vitaminsDisponible.push(stockProducts[index].nutritionalInfo.vitamins);
-
+      vitaminsDisponible.push(Object.entries(stockProducts[index].nutritionalInfo.vitamins).join(' '));
       let productVitamins = {
         description: stockProducts[index].description,
         formattedPrice: `R$ ${stockProducts[index].price}`,
